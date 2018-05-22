@@ -8,14 +8,47 @@
   height: 40px;
   background-color: #333;
   font-size: 12px;
+  color: #b0b0b0;
 
   a {
     line-height: 40px;
     color: #b0b0b0;
   }
 
+  a:hover {
+    color: #fff;
+  }
+
   .sep {
     margin: 0.5em;
     color: #424242;
+  }
+
+  .topbar-nav {
+    float: left;
+  }
+
+  .topbar-info, .topbar-cart {
+    float: right;
+    height: 40px;
+
+    .sep {
+      margin: 0.5em;
+      color: #424242;
+    }
+  }
+
+  .topbar-info {
+    margin-right: 15px;
+  }
+
+  .topbar-cart {
+    width: 120px;
+    background-color: #424242;
+
+    .cart-mini {
+      display: block;
+      text-align: center;
+    }
   }
 }
