@@ -47,16 +47,40 @@ gulp.task('script', function () {
         }));
 });
 
-gulp.task('serve', ['style', 'script', 'html'], function () {
+/**
+ * 拷贝font
+ */
+gulp.task('font', function () {
+    gulp.src('src/font/*')
+        .pipe(gulp.dest('dist/font/'))
+        .pipe(reload({
+            stream: true
+        }));
+});
+
+/**
+ * 拷贝img
+ */
+gulp.task('img', function () {
+    gulp.src('src/images/*')
+        .pipe(gulp.dest('dist/images/'))
+        .pipe(reload({
+            stream: true
+        }));
+});
+
+gulp.task('serve', ['style', 'script', 'html', 'font', 'img'], function () {
     browserSync({
         notify: false,
         port: 2018,
         server: {
-            baseDir: ['dist']
+            baseDir: ['dist','./']
         }
     });
 
     gulp.watch('src/styles/*.less', ['style']);
     gulp.watch('src/scripts/*.js', ['script']);
     gulp.watch('src/*.html', ['html']);
+    gulp.watch('src/font', ['font']);
+    gulp.watch('src/images', ['img']);
 });

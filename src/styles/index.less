@@ -1,54 +1,255 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale
+}
 
 .container {
-  width: 1226px;
-  margin: 0 auto;
+    width: 1226px;
+    margin: 0 auto;
 }
 
 .site-topbar {
-  height: 40px;
-  background-color: #333;
-  font-size: 12px;
-  color: #b0b0b0;
-
-  a {
-    line-height: 40px;
-    color: #b0b0b0;
-  }
-
-  a:hover {
-    color: #fff;
-  }
-
-  .sep {
-    margin: 0.5em;
-    color: #424242;
-  }
-
-  .topbar-nav {
-    float: left;
-  }
-
-  .topbar-info, .topbar-cart {
-    float: right;
     height: 40px;
+    background-color: #333;
+    font-size: 12px;
+    color: #b0b0b0;
+
+    a {
+        line-height: 40px;
+        color: #b0b0b0;
+    }
+
+    a:hover {
+        color: #fff;
+    }
 
     .sep {
-      margin: 0.5em;
-      color: #424242;
+        margin: 0.5em;
+        color: #424242;
     }
-  }
 
-  .topbar-info {
-    margin-right: 15px;
-  }
-
-  .topbar-cart {
-    width: 120px;
-    background-color: #424242;
-
-    .cart-mini {
-      display: block;
-      text-align: center;
+    .topbar-nav {
+        float: left;
     }
-  }
+
+    .topbar-info, .topbar-cart {
+        float: right;
+        height: 40px;
+
+        .sep {
+            margin: 0.5em;
+            color: #424242;
+        }
+    }
+
+    .topbar-info {
+        margin-right: 15px;
+    }
+
+    .topbar-cart {
+        width: 120px;
+        background-color: #424242;
+
+        .cart-mini {
+            display: block;
+            text-align: center;
+        }
+    }
 }
+
+.site-header {
+    height: 100px;
+
+    .header-log {
+
+        float: left;
+        margin-top: 22px;
+
+        a {
+            position: relative;
+            display: block;
+            font-size: 0px;
+            width: 55px;
+            height: 55px;
+            background-color: #ff6700;
+        }
+        a::after {
+            position: absolute;
+            width: 55px;
+            height: 55px;
+            content: '';
+            background: url(../images/mi-logo.png) no-repeat 50% 50%;
+        }
+    }
+
+    .header-nav {
+        position: relative;
+        float: left;
+        margin-left: 12px;
+
+        li {
+            float: left;
+
+            a {
+                display: block;
+                padding: 0 10px;
+                line-height: 100px;
+                color: #333333;
+            }
+
+            a:hover {
+                color: #ff6700;
+            }
+        }
+    }
+
+    .header-search {
+        float: right;
+        margin-top: 25px;
+        position: relative;
+
+        .search-form {
+            width: 296px;
+            height: 50px;
+            .search-text {
+                position: absolute;
+                top: 0;
+                z-index: 1;
+                right: 51px;
+                width: 223px;
+                height: 48px;
+                padding: 0 10px;
+                border: 1px solid #e0e0e0;
+            }
+
+            .search-btn {
+                position: absolute;
+                z-index: 2;
+                right: 0;
+                top: 0;
+                width: 52px;
+                height: 50px;
+                border: 1px solid #e0e0e0;
+                font-size: 24px;
+                background-color: #fff;
+                color: #616161;
+            }
+
+            .search-btn:hover {
+                color: #fff;
+                background-color: #ff6700;
+            }
+
+            .search-hot-words {
+                z-index: 2;
+                position: absolute;
+                top: 14px;
+                right: 62px;
+                text-align: right;
+                a {
+                    display: inline-block;
+                    font-size: 12px;
+                    background-color: #eee;
+                    padding: 0px 5px;
+                    color: #757575;
+                }
+            }
+        }
+    }
+}
+
+.home-hero-container {
+    .banner {
+        width: 1226px;
+        height: 460px;
+        overflow: hidden;
+        position: relative;
+
+        .list-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6130px;
+            height: 460px;
+            > li {
+                float: left;
+                cursor: pointer;
+            }
+
+        }
+    }
+    .banner-control {
+        display: none;
+        width: 1226px;
+        height: 460px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .perv, .next {
+            width: 30px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            text-align: center;
+            color: #cccccc;
+            line-height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+
+        }
+
+        .perv {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .perv:hover, .next:hover {
+            background-color: #cccccc;
+            color: #fff;
+            opacity: 0.8;
+        }
+    }
+
+    .list-control {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+
+        > li {
+            float: left;
+            list-style: none;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 100%;
+            border: 1px solid #fff;
+            margin-right: 10px;
+            line-height: 10px;
+
+        }
+        .active {
+            background-color: #776e6e;
+        }
+    }
+}
+
+
+
+
